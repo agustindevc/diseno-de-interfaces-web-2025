@@ -1,0 +1,113 @@
+//variables
+$b: 'body';
+$color-fondo: #ccc;
+$color-letra: black;
+$color-fondo2: blue;
+$color-letra2: blue;
+
+body{
+    background-color: $color-fondo;
+}
+
+h1{
+    color: $color-letra;
+    background-color: $color-fondo2;
+}
+
+/* Anidacion */
+.caja{
+    border: 1px solid black;
+    margin: 0px auto;
+    text-align: center;
+    background-color: white;
+    padding: 10px;
+
+    h2{
+        color: $color-fondo2;
+    }
+    .info{
+        border: 1px solid black;
+        h2{
+            color: $color-letra;
+            font-size: 18px;
+        }
+    }
+}
+
+/* Mixins / Funciones */
+@mixin crearBorder-sombra(){
+    border: 5px solid grey;
+    border-radius: 10px;
+    box-shadow: 0px 0px 5px black;
+}
+.caja{
+    @include crearBorder-sombra();
+}
+
+@mixin crearBorder5-sombraParam($color,$sizeB,$sizeS,$shadow,$sizeBR){
+    border: $sizeB solid $color;
+    border-radius: $sizeBR;
+    box-shadow: 0px 0px $sizeS $shadow;
+}
+.caja2{
+    @include crearBorder5-sombraParam(black,5px,10px,grey, 20px);
+
+    h2{
+        color: $color-letra2;
+    }
+}
+
+// Herencia Saas
+%alerta-normal{
+    @include crearBorder5-sombraParam(yellow,5px,10px,grey,20px);
+    padding: 10px;
+    width: 75%;
+    margin: 10px auto;
+    text-align: center;
+    font-size: 18px;
+}
+
+.alerta{
+    @extend %alerta-normal;
+}
+
+//operadores
+h4{
+    font-size: 32px + 5px - 1px;
+}
+
+$caja: 200px;
+$wrap: 900px;
+
+.cajas{
+    width: $wrap;
+    border: 1px solid black;
+}
+
+.cajaOp{
+    float: left;
+    @include crearBorder-sombra();
+    margin: 10px;
+    width: ($caja / $wrap) * 100%;
+}
+
+//Condicionales Sass - If
+$color-fondo: black;
+h1{
+    @if $color-fondo == #ccc{
+        color: orangered;
+    }@else if $color-fondo == black{
+        color: orangered;
+    } @else {
+        color: lightsalmon;
+    }
+}
+
+// Bucles For - Each -While
+
+$contador: 1;
+@for $contador from 1 through 9{
+    .listadoMixin ul li:nth-child(#{$contador}){
+        font-size: $contador * 5px;
+    }
+}

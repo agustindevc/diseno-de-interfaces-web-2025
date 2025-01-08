@@ -1,0 +1,138 @@
+/* del 0 al 1245px aplico esto */
+@media (max-width: 1230px){ 
+    .content__wrap{
+        width: 90%;
+    }
+    .content__banner{
+           width: 95%;
+           padding-left: 20%;
+    }
+    .content__banner h1{
+        justify-content: top center;
+        margin: 10px;
+    }
+    
+    .content__cards{
+        grid-template-columns: 1fr 1fr;
+    }
+ 
+    .container{
+        display: grid;
+        justify-content: center;
+        margin-left: 100px;
+    }
+    .content__articles{
+        width: 500px;  
+    }
+}
+
+@media (max-width: 969px){
+
+    .container{
+        margin-left: 80px;
+    }
+
+    .content__articles{
+        width: 400px;
+    }
+    .other__articles{
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+
+    
+}
+
+
+@media (max-width: 799px){
+    .content__banner{
+        display: none;
+    }
+
+    .container{
+        margin-left: 50px;
+        grid-template-columns: 1fr;
+        width: 600px;
+    }
+    .content__articles{
+        width: 590px;  
+    }
+    .content__lateral{
+        margin-left: 160px;
+    }
+
+}
+/* movemos ya el menú y cambiamos estructura */
+@media (max-width: 680px){
+    .header{
+        height: 120px;
+        justify-content: center;
+    }
+    .header__wrap{
+        grid-template-columns: 1fr;
+    }
+    .header__logo{
+        margin-left: 130px;
+    }
+
+    .container{
+        margin-left: 50px;
+        grid-template-columns: 1fr;
+        width: 600px;
+    }
+    .content__articles{
+        width: 490px;  
+    }
+    .content__lateral{
+        margin-left: 105px;
+    }
+
+    .footer__wrap{
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 550px){
+    .content__cards{
+        grid-template-columns: 1fr 1fr;
+        gap: 2px;
+        
+    }
+    .cards__card{
+        height: 150px;
+        width: 150px;
+    }
+    .card__icon{
+        padding: 0px;
+    }
+    .card__category{
+        margin: 0px;
+        font-size: small;
+    }
+
+    .card__img{
+       max-width: 100px;
+
+    }
+    .card__description{
+        display: none;
+    }
+
+    .container{
+         margin-left: 70px;
+        grid-template-columns: 1fr;
+        width: 350px;
+    }
+    .content__articles{
+        width: 400px;  
+    }
+    .content__lateral{
+        margin-left: 45px;
+    }
+
+    .footer__wrap{
+        grid-template-columns: 1fr;
+        margin-left: 30px;
+    }
+ 
+}

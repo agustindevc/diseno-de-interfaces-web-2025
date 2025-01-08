@@ -1,0 +1,96 @@
+/* RESETEP DE ESTILOS */
+*{
+    margin: 0px;
+    padding: 0px;
+    text-decoration: none;
+    font-family: Verdana, Tahoma, sans-serif;
+}
+body{
+    text-align: center;
+}
+.container{
+    border: 1px solid black;
+    width: 80%;
+    margin: 0 auto;
+}
+
+.container__layout{
+    display: grid;
+    /* grid-template-columns: 1fr 1fr 1fr; */
+    /* grid-template-columns: repeat(4, 1fr);  */
+    /* grid-template-columns: calc(50% - 10px) calc(25% - 10px) calc(25% - 10px) calc(25% - 10px); */
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+}
+
+.layout__box{
+    font-size: 20px;
+    padding: 20px;
+    border: 1px solid black;
+    margin: 10px;
+}
+
+.clearfix{
+    float: none;
+    clear: both;
+}
+
+.layout__box--red{
+    background-color: red;
+    color: white;
+    grid-column-start: 1;
+    grid-column-end: 3;    
+}
+.layout__box--yellow{
+    background-color: yellow;
+    color: white;
+}
+.layout__box--green{
+    background-color: green;
+    color: white;
+    
+}
+.layout__box--orange{
+    background-color: orange;
+    color: white;
+    
+}
+.layout__box--blue{
+    background-color: blue;
+    color: white;
+    grid-column: 3 / 5;
+}
+.layout__box--pink{
+    background-color: pink;
+    color: white;
+    
+}
+.layout__box--salmon{
+    background-color: salmon;
+    color: white;
+    grid-column: 1 / 5;
+    
+}
+.layout__box--black{
+    background-color: black;
+    color: white;
+    grid-row-start: 3;
+    grid-row-end: 5; 
+    
+}
+.layout__box--yellowgreen{
+    background-color: yellowgreen;
+    color: white;
+    grid-row-start: 3;
+    grid-row-end: 5; 
+    
+}
+.layout__box--cyan{
+    background-color: cyan;
+    color: white;
+    grid-column-start: 3;
+    grid-column-end: 5; 
+    grid-row-start: 3;
+    grid-row-end: 5; 
+    
+}

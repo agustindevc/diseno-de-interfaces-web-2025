@@ -1,0 +1,95 @@
+/* RESETEP DE ESTILOS */
+*{
+    margin: 0px;
+    padding: 0px;
+    text-decoration: none;
+    font-family: Verdana, Tahoma, sans-serif;
+}
+
+.container{
+    border: 1px solid black;
+}
+
+.container__layout{
+    /*float: left;*/ /*Flota el siguiente elemento a su mismo nivel mientras quepa en la pantalla*/
+    display: flex;
+    flex-direction: row; /*Coloca todo en la misma fila*/
+    flex-wrap: wrap; /*Si no cabe en la linea, pasa a la siguiente*/
+    justify-content:space-around; /*coloca todos los elementos a la misma distancia entre si*/
+    width: auto; /*Ajusta el ancho de la caja al contenido*/
+    height: 700px; /*Ajusta el alto de la caja*/
+    align-items: center; /*coloca los elementos centrado en la caja*/
+    border: 1px solid black;
+}
+
+.layout__box{
+    /*float: left;*/ /*flota cada uno de los layout mientras quepan en la pantalla*/
+    font-size:20px;
+    text-align: center;
+    padding: 20px;
+    border: 2px solid gray;
+    margin: 10px;
+
+    flex-grow: 1; /*FORMULA POR DEFECTO. LAS CAJAS OCUPAN TODO EL ESPACIO DISPONIBLE*/
+}
+
+/* Esta clase permite eliminar el flotado de una seccion especifica para que se coloque debajo 
+en este caso lo aplicamos al footer */
+.clearfix{
+    float: none;
+    clear: both;
+}
+
+.layout__box--red{
+    background-color: red;
+    color: white;
+    flex-grow: 20; /*Amplia el tamaño de la caja a lo ancho*/
+    min-width: 20%; /*tamaño minimo de la caja a lo ancho*/
+    max-width: 20%; /*tamaño máximo de la caja a lo ancho*/
+    align-self: center; /*Alinea el elemento en el inicio. tambien puede ser center o end*/
+    order: 2; /*Permite ordenar las cajas. Se debe aplicar a todos los elementos para que quede
+    como uno desea. Sino los que no tienen order apareceran primero*/
+    flex-basis: calc((100%/3) + 20px); /*Equivale al flex grow, no esta claro, investigar*/
+}
+.layout__box--yellow{
+    background-color: yellow;
+    color: white;
+    /*flex-grow: 20;*/ /*Amplia el tamaño de la caja a lo ancho*/
+    min-width: 20%; /*tamaño minimo de la caja a lo ancho*/
+    max-width: 20%; /*tamaño máximo de la caja a lo ancho*/
+    order: 3;
+    align-self: flex-end;/*Alinea el elemento en el inicio. tambien puede ser center o end*/
+}
+.layout__box--green{
+    background-color: green;
+    color: white;
+    /*flex-grow: 20;*/ /*Amplia el tamaño de la caja a lo ancho*/
+    min-width: 20%; /*tamaño minimo de la caja a lo ancho*/
+    max-width: 20%; /*tamaño máximo de la caja a lo ancho*/
+    order: 6;
+}
+.layout__box--orange{
+    background-color: orange;
+    color: white;
+    /*flex-grow: 20;*/ /*Amplia el tamaño de la caja a lo ancho*/
+    min-width: 20%; /*tamaño minimo de la caja a lo ancho*/
+    max-width: 20%; /*tamaño máximo de la caja a lo ancho*/
+    order: 5;
+}
+.layout__box--pink{
+    background-color: pink;
+    color: white;
+    /*flex-grow: 20;*/ /*Amplia el tamaño de la caja a lo ancho*/
+    min-width: 20%; /*tamaño minimo de la caja a lo ancho*/
+    max-width: 20%; /*tamaño máximo de la caj a lo anchoa*/
+    order: 4;
+}
+.layout__box--blue{
+    background-color: blue;
+    color: white;
+    /*flex-grow: 50;*/ /*Amplia el tamaño de la caja a lo ancho*/
+    min-width: 5%; /*tamaño minimo de la caja a lo ancho*/
+    max-width: 5%; /*tamaño máximo de la caja a lo ancho*/
+    order: 1;
+    align-self: flex-start; /*Alinea el elemento en el inicio. tambien puede ser center o end*/
+}

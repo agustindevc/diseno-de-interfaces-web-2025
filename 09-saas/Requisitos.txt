@@ -1,0 +1,6 @@
+-SE NECESITA TENER INSTALADO NODE.JS (en cmd colocar node -v para saber que version esta instalda, si esta)
+
+-Instalar saas: en cmd(npm instal -g saas)
+
+- instalar extension live saas compiler.
+
