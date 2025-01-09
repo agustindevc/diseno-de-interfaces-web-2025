@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practicando JQUERY</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.js" type="text/javascript"></script>
+    <script>
+
+        //crear una paogina con un 3 input(botones) debajo, cuando pulse el boton,
+        //  en cada input debe aparecer un numero,
+        //  en el primero 1, en el segundo 2 y en el tercero 3.
+        $(document).ready(function(evento){
+            $("button").on("click",function(){
+                var text = $(this).text();
+                $('#camposelector').val(text);
+            });
+        });
+        
+    </script>
+</head>
+<body>
+    <form>
+        <input type="Text" id="camposelector">
+        <br><br>
+        <button type="button" class="input">1</button>
+        <button type="button" class="input">2</button>
+        <button type="button" class="input">3</button>
+    </form>
+</body>
+</html>
