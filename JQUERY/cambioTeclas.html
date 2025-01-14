@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prueba de teclas ASCII</title>
+    <style>
+        #cuadro{
+            width: 100px;
+            height: 100px;
+            place-content: center;
+            
+        }
+    </style>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        
+
+/* EVENTOS DE TECLADO -TEMA 9>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+    Los eventos de teclado principales de JQUERY son:
+    keypress: cuando se presiona y se suelta una tecla.
+    KeyUp: Cuando se suelta una tecla.
+    KeyDown: Cuando se presiona una tecla 
+*/
+
+        //CREA UNA FUNCION QUE AL PRESIONAR UNA TECLA, SE ESCRIBA LA LETRA SIGUIENTE EN EL CODIGO ASCII.
+        $(document).ready(function() {
+            $(document).keypress(function(event) {
+                // Obtener el código ASCII de la tecla presionada(which nos da el codigo ascii de la tecla que hemos pulsado)
+                var keyCode = event.which || event.keyCode;
+                // Calcular el siguiente código ASCII
+                var nextKeyCode = keyCode + 1;
+                // Obtener la letra correspondiente al siguiente código ASCII
+                var nextChar = String.fromCharCode(nextKeyCode);
+                // Cancelar el comportamiento predeterminado de la tecla presionada
+                event.preventDefault();
+                // Insertar la siguiente letra en el campo de texto activo (VER ALTERNATIVAS)
+                var activeElement = document.activeElement;
+                var start = activeElement.selectionStart;
+                var end = activeElement.selectionEnd;
+                var value = activeElement.value;
+                activeElement.value = value.slice(0, start) + nextChar + value.slice(end);
+                // Colocar el cursor justo después de la letra insertada
+                activeElement.selectionStart = activeElement.selectionEnd = start + 1;
+            });
+        });
+
+/*EVENTOS DE RATON - TEMA 9 PAGINA 10>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+    Los eventos de RATON principales de JQUERY son:
+    CLICK()
+    DBLCLICK()
+    HOVER()
+    MOUSEDOWN()
+    MOUSEUP()
+    MOUSELEAVE()
+    MOUSEENTER()
+*/
+
+        //Funciones de raton
+        $(document).ready(function(){
+            //al entrar el raton cambia el color de fondo
+            $("#cuadro").mouseenter(function(event){
+                $("#cuadro").css("background-color", "lightgreen");
+            });
+            //al salir el raton cambia el color de fondo
+            $("#cuadro").mouseleave(function(event){
+                $("#cuadro").css("background-color", "lightblue");
+            });
+            //al hacer click reduce el tamaño. (NO FUNCIONA)
+            $("#cuadro").dblclick(function(event){
+                let actualWidth = $("#cuadro").width();
+                let actualHeight = $("#cuadro").height();
+                $("#cuadro").css("width", actualWidth - 10 + "px");
+                $("#cuadro").css("height", actualHeight - 10 + "px")
+            });
+            //al hacer doble click aumenta el tamaño.
+            $("#cuadro").click(function(event){
+                let actualWidth = $("#cuadro").width();
+                let actualHeight = $("#cuadro").height();
+                $("#cuadro").css("width", actualWidth + 10 + "px");
+                $("#cuadro").css("height", actualHeight + 10 + "px")
+            });
+            
+            //al pasar por encima muestra un alert.
+            $("#cuadro").mouseover(function(event){
+                alert("tamaño actual: " + actualWidth);
+            });
+        });
+    </script>
+</head>
+<body>
+    <h1>Prueba de teclas ASCII</h1>
+    <input type="text" id="campoTexto" placeholder="Escribe aquí...">
+    <br>
+    <div id="cuadro">Pasa el ratón</div>
+</body>
+</html>
+
+    <!--Los eventos de teclado principales de JQUERY son:
+    keypress: cuando se presiona y se suelta una tecla.
+    KeyUp: Cuando se suelta una tecla.
+    KeyDown: Cuando se presiona una tecla 
+    -->
