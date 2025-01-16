@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guia manejo DOM - Ejercicio 1</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+    <style>
+        .canta{
+            border: solid 3px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Guia manejo DOM - tema 9</h1>
+
+    <button class="item">Texto Antiguo</button>
+
+    <div>Hola1</div>
+    <div>Hola2</div>
+    <div>Hola3</div>
+    <div>Hola4</div>
+
+    <p>Parrafo1</p>
+    <p>Parrafo2</p>
+    <p>Parrafo3</p>
+    <p>Parrafo</p>
+
+    <ul id="lista">
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>5</li>
+    </ul>
+
+    <div class="canta">canta1</div>
+    <div class="canta">canta2</div>
+    <div class="canta">canta3</div>
+    <div class="canta">canta4</div>
+    
+    <div class="eliminar">eliminar1</div>
+    <div class="eliminar">eliminar2</div>
+    <div class="eliminar">eliminar3</div>
+    <div class="eliminar">eliminar4</div>
+
+    <h1 id="titulo">Este es el titulo</h1>
+
+    <p id="descripcion">Esta es la descripcion</p>
+
+    <div class="producto">producto</div>
+    <div class="producto">producto</div>
+    <div class="producto">producto</div>
+    <div class="producto">producto</div>
+
+    <div id="contenedor">
+        <span>span1</span>
+        <span>span2</span>
+        <span>span3</span>
+        <span>span4</span>
+    </div>
+
+    <div class="foto">foto1</div>
+    <div class="foto">foto2</div>
+    <div class="foto">foto3</div>
+    <div class="foto">foto4</div>
+
+    <div>
+        <h1>Elemento 1</h1>
+        <h1>Elemento 2</h1>
+        <h1>Elemento 3</h1>
+        <h1>Elemento 4</h1>
+    </div>
+
+    <input type="text">
+    <input type="text">
+    <input type="text">
+    <input type="text">
+    
+    <nav>
+        <a href="">aaaa</a>
+        <a href="">aaaa</a>
+        <a href="">aaaa</a>
+        <a href="">aaaa</a>
+    </nav>
+
+    
+
+    <img id="imagen" src="" alt="">
+
+    <script>
+        $(function() {
+            //Ejercicio 1.
+            //1- Selecciona el elemento con la clase .item y cámbiale el texto.
+            $(".item").text("Nuevo texto");
+            //Ejercicio 2.
+            //2-Selecciona el primer elemento con la clase .producto y cambia su color de fondo a azul.
+            $(".producto").css("background-color", "red");
+            //Ejercicio 3.
+            //Accede al primer <div> de la página y agrega el texto "Hola Mundo".
+            $("div").eq(0).text("Holoa Mundo");
+            //Ejercicio 4.
+            //Selecciona el elemento con id #titulo y cambia su color a rojo.
+            $("#titulo").css("color", "red");
+            //Ejercicio 5.
+            //Accede a todos los elementos <p> en la página y cambia su tamaño de fuente a 18px.
+            $("p").css("font-size", "18px");
+            //Ejercicio 6.
+            //Añade un nuevo elemento <li> al final de una lista con id #lista.
+            $("ul#lista").append("<li>6 (agregado)</li>");
+            //otra forma
+            $("<li>7 (agregado otra forma)</li>").appendTo("ul#lista");
+            //Ejercicio 7.
+            //Accede al contenido del elemento con id #descripcion y muestra el valor en consola.
+            console.log($("#descripcion").html());
+            //Ejercicio 8.
+            //Obtén todos los elementos con la clase .carta y cambia su color de borde a verde.
+            $(".canta").css("border-color", "green");
+            //Ejercicio 9.
+            //Elimina todos los elementos con la clase .eliminar.
+            $(".eliminar").remove();
+            //Ejercicio 10
+            //Selecciona todos los <span> dentro de un <div> con id #contenedor y cambia su color de fondo a gris.
+            $("#contenedor span").css("background-color", "grey");
+
+            //Funciones de DOM
+
+            //Ejercicio 11.
+            //Selecciona todos los elementos con la clase .foto y ocúltalos.
+            $(".foto").hide();
+
+            //Ejercicio 12.
+            //Añade un borde rojo a todos los elementos <h1> dentro de un <div>.
+            $("div h1").css("border", "solid 5px red");
+
+            //Ejercicio 13.
+            //Accede a todos los elementos de tipo <input> y establece su valor como "Texto predeterminado".
+            $("input").attr("value", "Texto Predeterminado");
+
+            //Ejercicio 14.
+            //Selecciona el segundo <div> en el documento y cámbiale el fondo a amarillo.
+            $("div").eq(1).css("background-color", "yellow");
+
+            //Ejercicio 15
+            //Añade un class llamado activo a todos los <a> dentro de un <nav>.
+            $("nav a").addClass("activo")
+            
+            //Ejercicio 16
+            //Inserta un nuevo párrafo al principio del <body> con el texto "Bienvenido".
+            $("body").prepend("<p>Bienvenido</p>");
+
+            //Ejercicio 17.
+            //Cambiar el src de una imagen con id #imagen a una nueva URL.
+            $("#imagen").attr("src", "https://es.web.img3.acsta.net/medias/nmedia/18/79/93/75/20281573.jpg");
+            
+            //Ejercicio18
+            //Establece un atributo data-id en todos los elementos con la clase .producto.
+            $(".producto").attr("data-id", "prueba");
+
+            //Ejercicio 19.
+            //Cambiar el valor de un <input> con id #nombre a "Juan Pérez".
+            
+        }); 
+    </script>
+</body>
+</html>
