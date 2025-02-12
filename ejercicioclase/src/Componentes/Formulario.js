@@ -1,9 +1,9 @@
 import React from 'react'
 
-export default function Mensaje({men}) {
+export default function Formulario() {
   return (
     <div>
-      <p>{men}</p> 
+      
     </div>
   )
 }

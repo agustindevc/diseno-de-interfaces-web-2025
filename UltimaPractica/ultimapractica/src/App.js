@@ -22,10 +22,11 @@ function App() {
   const comparar=(numero)=>{
     if(!numero){
       setMensaje("Pon un número");
-    } else if(Number(numero)==numSecreto){
+    } else if(Number(numero)===numSecreto){
         setMensaje("Ganaste");
         document.body.style.backgroundColor="green";
-        if(score>puntuacion){
+
+        if(score<puntuacion){
           setScore(puntuacion);
         }
       }else if (Number(numero)<numSecreto){
@@ -57,7 +58,7 @@ function App() {
       <NumeroSecreto/>
       <br/>
       <Formulario comparar={comparar}/>
-      <Puntuacion/>
+      <Puntuacion param={mensaje} puntuacion={puntuacion} score={score}/>
     </div>
   );
 }
