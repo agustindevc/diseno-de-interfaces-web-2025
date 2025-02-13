@@ -1,0 +1,21 @@
+react
+
+CREAR UN PROYECTO NUEVO.
+
+Crear una carpeta y dentro de ella, en el terminal, ejecutar
+
+create-react-app nombreproyecto
+
+dentro del pyoyecto:
+
+npm install ajv@latest
+
+
+EXTENSIONES 
+
+Simple React Snippets
+ES7
+
+Ejecutar el pryecto:
+
+npm start
